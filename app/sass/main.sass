@@ -1,3 +1,8 @@
+$reg: 'Gotham Pro reg'
+$bold: 'Gotham Pro bold'
+$med: 'Gotham Pro med'
+$black: 'Gotham Pro black'
+
 *
 	margin: 0
 	padding: 0
@@ -14,12 +19,8 @@ ul
 
 body
 	font-size: 16px
-	font-family: Arial, sans-serif
-	background-color: #1e2025
-
-#page
-	min-height: 100vh
-	position: relative
+	font-family: $reg, Arial, sans-serif
+	color: #fff
 
 html
 	font-size: 16px
@@ -75,10 +76,9 @@ input[type="submit"]
 
 .container
 	width: 100%
-	max-width: 1170px
-	padding-left: 15px
-	padding-right: 15px
-	margin: 0 auto
+	padding-left: 5.9375rem
+	padding-right: 5.9375rem
+	height: 100%
 
 .inline-flex
 	display: -webkit-inline-flex
@@ -130,8 +130,186 @@ input[type="submit"]
 .btn
 	display: block
 
-footer
-	position: absolute
-	left: 0
-	bottom: 0
-	right: 0
+.section
+	height: 100%
+	min-height: 100vh
+
+.main
+	background-position: center
+	background-size: cover
+	background-repeat: no-repeat
+	&__content
+		height: 100%
+		&-blocks
+			width: 5rem
+			bottom: 3%
+			left: 3.2%
+			position: absolute
+		&-block
+			width: 0.5rem
+			margin-right: 0.5rem
+			margin-bottom: 0.5rem
+			display: block
+			background-color: #666
+			height: 0.5rem
+		&-label
+			position: absolute
+			color: #8f8f90
+			text-transform: uppercase
+			letter-spacing: 0.025em
+		&-info
+			right: 0
+			top: 50%
+			transform: translate(18%, -50%)
+			font-size: 1.62500em
+		&-lens
+			font-size: 2.4375em
+			bottom: 3%
+			right: 20.5%
+			&.main__content-lens--text
+				right: 0
+				transform: translateX(16%)
+		&-rect
+			position: absolute
+			background-color: #6d6e6f
+			width: 0.6875rem
+			height: 1.87500rem
+			left: 0
+			-webkit-transform: translateX(-50%)
+			-moz-transform: translateX(-50%)
+			-ms-transform: translateX(-50%)
+			-o-transform: translateX(-50%)
+			transform: translateX(-50%)
+			top: 18.3%
+	&__title
+		text-transform: uppercase
+		text-align: center
+		font-family: $black
+		letter-spacing: 0.075em
+		font-size: 3.12500em
+		word-spacing: 1rem
+		max-width: 90%
+		line-height: 1.3
+	.header:after,
+	.footer:before
+		content: ''
+		display: block
+		position: absolute
+		left: 50%
+		-webkit-transform: translateX(-50%)
+		-moz-transform: translateX(-50%)
+		-ms-transform: translateX(-50%)
+		-o-transform: translateX(-50%)
+		transform: translateX(-50%)
+		width: 92%
+		height: 1px
+		background-color: rgba(#fff, .4)
+	.header:after
+		bottom: 0
+	.footer:before
+		top: 0
+
+.header
+	height: 12.3vh
+	font-family: $bold
+	position: relative
+	a
+		color: inherit
+	&__brief
+		font-size: 1.75em
+		letter-spacing: 0.005em
+	&__logo
+		width: 11.0625rem
+		height: auto
+		display: block
+		position: absolute
+		left: 50%
+		top: 50%
+		-webkit-transform: translate(-50%, -50%)
+		-moz-transform: translate(-50%, -50%)
+		-ms-transform: translate(-50%, -50%)
+		-o-transform: translate(-50%, -50%)
+		transform: translate(-50%, -50%)
+		
+	&__nav
+		&-list
+			li
+				margin-right: 2.62500rem
+				&:hover
+					a
+						&:after
+							background-color: #800
+				&:last-of-type
+					margin-right: 0
+				a
+					transition: 0.15s all ease-in
+					display: block
+					position: relative
+					font-size: 1.25em
+					letter-spacing: 0.025em
+					&:after
+						content: ''
+						display: block
+						position: absolute
+						bottom: -0.375rem
+						left: 0
+						right: 0
+						height: 2px
+						transition: 0.15s all ease-in
+						background-color: transparent
+
+.inner
+	height: 78.4vh
+	width: 98.2%
+	margin: 0 auto
+	position: relative
+	&:before,
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		height: 86%
+		top: 50%
+		-webkit-transform: translateY(-50%)
+		-moz-transform: translateY(-50%)
+		-ms-transform: translateY(-50%)
+		-o-transform: translateY(-50%)
+		transform: translateY(-50%)
+		background-color: rgba(#fff, .4)
+		width: 1px
+	&:before
+		left: 0
+	&:after
+		right: 0
+
+.footer
+	height: 9.3vh
+	position: relative
+	padding-top: 1.5rem
+	font-size: 1.12500em
+	letter-spacing: 0.025em
+	&__breadcrumbs
+		position: relative
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			right: 0
+			bottom: 0
+			width: 10.37500rem
+			height: 2px
+			background-color: #fff
+		&-num
+			display: block
+			font-family: $med
+			padding-bottom: 0.4375rem
+	&__nav
+		&-list
+			li
+				margin-right: 2.75rem
+				&:last-of-type
+					margin-right: 0
+			a
+				color: inherit
+				font-family: $bold
+				display: block
