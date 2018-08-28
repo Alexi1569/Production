@@ -2,6 +2,7 @@ $reg: 'Gotham Pro reg'
 $bold: 'Gotham Pro bold'
 $med: 'Gotham Pro med'
 $black: 'Gotham Pro black'
+$light: 'Gotham Pro light'
 
 *
 	margin: 0
@@ -37,9 +38,9 @@ textarea
 
 input,
 textarea
-	font-family: sans-serif
-	font-size: 11px
-	color: #333
+	font-size: 1.12500em
+	color: #fff
+	font-family: $reg
 
 .slick-slide:focus
 	outline: 0
@@ -49,30 +50,40 @@ textarea
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder
-	font-size: 11px
-	color: #999999
-	font-family: Arial
+	font-size: 1.12500em
+	color: #b9b9b9
+	font-family: $reg
+	letter-spacing: 0.025em
 
 input::-moz-placeholder,
 textarea::-moz-placeholder
-	font-size: 11px
-	color: #999999
-	font-family: Arial
+	font-size: 1.12500em
+	color: #b9b9b9
+	font-family: $reg
+	letter-spacing: 0.025em
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder
-	font-size: 11px
-	color: #999999
-	font-family: Arial
+	font-size: 1.12500em
+	color: #b9b9b9
+	font-family: $reg
+	letter-spacing: 0.025em
 
 input:-moz-placeholder,
 textarea:-moz-placeholder
-	font-size: 11px
-	color: #999999
-	font-family: Arial
+	font-size: 1.12500em
+	color: #b9b9b9
+	font-family: $reg
+	letter-spacing: 0.025em
 
 input[type="submit"]
 	cursor: pointer
+	font-family: $black
+	letter-spacing: 0.05em
+	font-size: 1.5em
+	border: 0
+	background-color: transparent
+	border-bottom: 2px solid #fff
 
 .container
 	width: 100%
@@ -131,7 +142,200 @@ input[type="submit"]
 	display: block
 
 .section
-	min-height: 100vh
+	height: 100vh
+
+.brief-photo
+	input[type="submit"]
+		position: absolute
+		right: 0
+		bottom: 0
+
+.contacts
+	&__content
+		font-size: 1.5em
+		letter-spacing: 0.025em
+		margin-left: 5rem
+	&__link
+		padding-bottom: 0.5rem
+		margin-top: 3.5rem
+		color: #fff
+		border-bottom: 2px solid #fff
+		display: inline-block
+		font-family: $bold
+	&__table
+		tr
+			& > td
+				a,
+				span
+					color: #fff
+					padding: 1.25rem 0
+					display: inline-block
+				&:first-of-type
+					span
+						font-family: $bold
+						margin-right: 4.0625rem
+				&:last-of-type
+					span,
+					a
+						font-family: $light
+					a
+						&:first-of-type
+							&:before
+								display: none
+						&:before
+							content: ' | '
+
+	&__overlay
+		left: 0
+		top: 0
+		bottom: 0
+		height: 100%
+		width: 28.95%
+		background: rgba(#0d0d0d, .95)
+		position: fixed
+	&__section
+		width: 100%
+		position: relative
+		z-index: 1
+		padding: 0 15% 0 14.2%
+	&__title
+		letter-spacing: 0.075em
+		font-size: 4.37500em
+		font-family: $black
+
+.blog-item
+	.blog__slide-title
+		margin-top: -0.5em
+	&__text
+		margin-top: 1.6rem
+		height: 72%
+		padding-right: 16px !important
+		p
+			font-size: 1.37500em
+			line-height: 1.5
+			letter-spacing: 0.01em
+			font-family: $light
+	&__content
+		flex: 1
+		margin-left: 7.3%
+		position: relative
+		height: 42.12500rem
+	&__socials
+		position: absolute
+		left: 0
+		bottom: 0
+		li
+			padding-right: 0.85rem
+			margin-right: 0.85rem
+			position: relative
+			&:last-of-type
+				padding-right: 0
+				margin-right: 0
+				&:after
+					display: none
+			&:after
+				content: ''
+				display: block
+				width: 2px
+				position: absolute
+				height: 100%
+				background-color: #fff
+				right: 0
+				top: 50%
+				transform: translateY(-50%)
+			a
+				display: block
+				font-family: $bold
+				color: #fff
+				font-size: 1.37500em
+				letter-spacing: 0.01em
+	&__wrapper
+		padding: 0 15% 0 5%
+		width: 100%
+	&__img
+		width: 50.8%
+		img
+			max-width: 100%
+			display: block
+			height: auto
+
+.brief-video
+	input[type="submit"]
+		display: block
+		margin: auto
+
+.form-group
+	input:not([type="submit"])
+		border: 0
+		background-color: transparent
+		border-bottom: 1px solid #fff
+	& > label
+		font-size: 1.12500em
+		color: #b9b9b9
+		font-family: $reg
+		letter-spacing: 0.025em
+		transition: 0.2s all linear
+		&.form-content__attention
+			color: #3b3b3b
+			font-size: 1em
+			position: absolute
+			left: 0
+			top: 100%
+			margin-top: 0.25rem
+			line-height: 1.1
+	&.active
+		& > label:not(.form-content__attention):not(.form-group)
+			opacity: 0
+
+form label:not(.flex)
+	display: block
+
+.form-content
+	&__title
+		font-family: $bold
+		font-size: 1.5em
+		letter-spacing: 0.025em
+		margin-bottom: 2rem
+	&__left
+		width: 26.25%
+		position: relative
+		&-top,
+		&-bottom
+			width: 100%
+		&-bottom
+			position: absolute
+			left: 0
+			bottom: 0
+	&__right
+		position: relative
+		width: 67.5%
+
+.brief-inner__form
+	.form-content__left
+		.form-group:not(.form-group--attention)
+			width: 100%	
+
+.brief-inner
+	&__section
+		width: 100%
+		padding: 0 3.8%
+	&__form
+		.form-group
+			&:not(.form-group--attention)
+				width: 46.63%
+			position: relative
+			padding-bottom: 1rem
+			margin-bottom: 3.3rem
+			&.form-group--attention
+				font-size: 100%
+				margin-bottom: 0
+			input:not([type="submit"])
+				position: absolute
+				width: 100%
+				left: 0
+				right: 0
+				padding-bottom: 1rem
+				bottom: 0
 
 .photo
 	position: relative
@@ -364,7 +568,7 @@ input[type="submit"]
 	min-height: 12.3vh
 	font-family: $bold
 	position: relative
-	z-index: 1
+	z-index: 2
 	a
 		color: inherit
 	&__brief
@@ -445,6 +649,7 @@ input[type="submit"]
 	width: 98.2%
 	margin: 0 auto
 	position: relative
+	padding: 2rem 0
 	
 #js-video-slider .slick-slide > div
 	display: -webkit-flex
@@ -454,6 +659,215 @@ input[type="submit"]
 	display: flex
 	align-items: stretch
 	justify-content: flex-start
+
+.blog
+	&__slider
+		padding-left: 12.4%
+		.slick-slide
+			margin-right: 2.25rem
+		.slick-list
+			margin-right: -2.25rem
+
+	&__slide
+		&-title
+			font-family: $med
+			letter-spacing: 0.01em
+			font-size: 1.62500em
+			line-height: 1.3
+			color: #fff
+			margin-top: 1.12500rem
+			display: block
+			font-weight: normal
+		&-info
+			letter-spacing: 0.01em
+			font-family: $light
+			font-size: 1.12500em
+			& > span
+				&:after
+					content: ' |'
+		
+		&-link
+			color: #fff
+			font-family: $black
+			text-align: center
+			position: relative
+			font-size: 0
+			display: inline-block
+			transition: 0.15s all linear
+			transition-delay: 0.14s
+			opacity: 0
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				left: 0
+				right: 0
+				bottom: -0.55rem
+				height: 0.1875rem
+				background-color: #fff
+		&-overlay
+			position: absolute
+			left: 0
+			transition: 0.25s all linear
+			top: 0
+			z-index: -1
+			transform: scale(0.1) rotate(-90deg)
+			bottom: 0
+			right: 0
+			background-color: rgba(#a80000, .94)
+		&-img
+			position: relative
+			max-width: 420px
+			&:hover
+				.blog__slide-overlay
+					transform: scale(1) rotate(0deg)
+					opacity: 1
+					z-index: 1
+				.blog__slide-link
+					opacity: 1
+					font-size: 2.5em
+					letter-spacing: 0.05em
+			& > img
+				display: block
+				margin: auto
+				max-width: 100%
+				height: auto
+
+.photo-items
+	.slick-slide
+		& > div
+			display: flex
+			align-items: flex-start
+			justify-content: flex-start
+			margin-right: -1.87500rem	
+			margin-bottom: 1.87500rem
+	&__controls
+		position: absolute
+		right: 0
+		top: 50%
+		transform: translateY(-50%)
+	&__slider
+		margin-bottom: -1.87500rem
+	&__dots
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		justify-content: flex-start
+		li
+			height: 2px
+			margin: 0.3125rem 0
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			align-items: center
+			justify-content: center
+			&.slick-active
+				& > button
+					transform: translateX(-100%)
+			& > button
+				font-size: 0
+				background-color: #fff
+				height: 2px
+				width: 1.87500rem
+				transition: 0.2s all linear
+				border: 0
+	&__content
+		position: relative
+		width: 100%
+		padding: 0 5.3%
+	&__slide
+		max-width: 22.5625rem
+		width: 23.52% !important
+		margin-right: 1.87500rem
+		&:hover
+			.photo-items__overlay
+				transform: scale(1) rotate(0deg)
+				opacity: 1
+				z-index: 1
+			.photo-items__link
+				opacity: 1
+				font-size: 2.5em
+				letter-spacing: 0.05em
+	&__link
+		color: #fff
+		font-family: $black
+		text-align: center
+		position: relative
+		font-size: 0
+		display: inline-block
+		transition: 0.15s all linear
+		transition-delay: 0.14s
+		opacity: 0
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			left: 0
+			right: 0
+			bottom: -0.55rem
+			height: 0.1875rem
+			background-color: #fff
+	&__overlay
+		position: absolute
+		left: 0
+		transition: 0.25s all linear
+		top: 0
+		z-index: -1
+		transform: scale(0.1) rotate(-90deg)
+		bottom: 0
+		right: 0
+		background-color: rgba(#a80000, .94)
+	&__img
+		position: relative
+		& > img
+			display: block
+			margin: auto
+			max-width: 100%
+			height: auto
+
+.brief
+	&__section
+		width: 100%
+	&__link
+		color: #fff
+		position: relative
+		z-index: 1
+		&-wrapper
+			width: 50%
+			text-align: center
+			&:hover
+				.brief__link-overlay
+					background-color: #a80000
+			&:first-child
+				.brief__link-overlay
+					left: 0
+			&:last-child
+				.brief__link-overlay
+					right: 0
+		&-overlay
+			width: 50%
+			top: 0
+			bottom: 0
+			height: 100%
+			background: rgba(#0d0d0d, .88)
+			position: fixed
+			transition: 0.2s all linear
+		&-title
+			font-family: $black
+			font-size: 3.75em
+			letter-spacing: 0.05em
+		&-descr
+			font-family: $med
+			letter-spacing: 0.025em
+			font-size: 1.25em
+			display: block
+			margin-top: 0.35rem
 
 .video
 	.inner
@@ -515,7 +929,6 @@ input[type="submit"]
 				transition: 0.15s all linear
 				transition-delay: 0.14s
 				opacity: 0
-				transform: translateY(15%)
 				&:after
 					content: ''
 					display: block
@@ -544,149 +957,14 @@ input[type="submit"]
 					height: auto
 
 
-.scroll-wrapper
-  overflow: hidden !important
-  padding: 0 !important
-  position: relative
-  > .scroll-content
-    border: none !important
-    box-sizing: content-box !important
-    height: auto
-    left: 0
-    margin: 0
-    max-height: none
-    max-width: none !important
-    overflow: scroll !important
-    padding: 0
-    position: relative !important
-    top: 0
-    width: auto !important
-    &::-webkit-scrollbar
-      height: 0
-      width: 0
-
-.scroll-element
-  display: none
-  box-sizing: content-box
-  div
-    box-sizing: content-box
-  &.scroll-x.scroll-scrollx_visible, &.scroll-y.scroll-scrolly_visible
-    display: block
-  .scroll-bar, .scroll-arrow
-    cursor: default
-
-.scroll-textarea
-  border: 1px solid #cccccc
-  border-top-color: #999999
-  > .scroll-content
-    overflow: hidden !important
-    > textarea
-      border: none !important
-      box-sizing: border-box
-      height: 100% !important
-      margin: 0
-      max-height: none !important
-      max-width: none !important
-      overflow: scroll !important
-      outline: none
-      padding: 2px
-      position: relative !important
-      top: 0
-      width: 100% !important
-      &::-webkit-scrollbar
-        height: 0
-        width: 0
-
-.scrollbar-rail >
-  .scroll-element
-    border: none
-    margin: 0
-    overflow: hidden
-    padding: 0
-    position: absolute
-    z-index: 10
-    div
-      border: none
-      margin: 0
-      overflow: hidden
-      padding: 0
-      position: absolute
-      z-index: 10
-      display: block
-      height: 100%
-      left: 0
-      top: 0
-      width: 100%
-    background-color: #ffffff
-    .scroll-element_size
-      background-color: #999
-      background-color: rgba(0, 0, 0, 0.3)
-    .scroll-element_outer:hover .scroll-element_size
-      background-color: #666
-      background-color: rgba(0, 0, 0, 0.5)
-    &.scroll-x
-      bottom: 0
-      height: 12px
-      left: 0
-      min-width: 100%
-      padding: 3px 0 2px
-      width: 100%
-    &.scroll-y
-      height: 100%
-      min-height: 100%
-      padding: 0 2px 0 3px
-      right: 0
-      top: 0
-      width: 12px
-    .scroll-bar
-      background-color: #d0b9a0
-      -webkit-border-radius: 2px
-      -moz-border-radius: 2px
-      border-radius: 2px
-      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5)
-    .scroll-element_outer:hover .scroll-bar
-      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6)
-  .scroll-content
-    &.scroll-scrolly_visible
-      left: -17px
-      margin-left: 17px
-    &.scroll-scrollx_visible
-      margin-top: 17px
-      top: -17px
-  .scroll-element
-    &.scroll-x .scroll-bar
-      height: 10px
-      min-width: 10px
-      top: 1px
-    &.scroll-y .scroll-bar
-      left: 1px
-      min-height: 10px
-      width: 10px
-    &.scroll-x
-      .scroll-element_outer
-        height: 15px
-        left: 5px
-      .scroll-element_size
-        height: 2px
-        left: -10px
-        top: 5px
-    &.scroll-y
-      .scroll-element_outer
-        top: 5px
-        width: 15px
-      .scroll-element_size
-        left: 5px
-        top: -10px
-        width: 2px
-    &.scroll-x.scroll-scrolly_visible .scroll-element_size
-      left: -25px
-    &.scroll-y.scroll-scrollx_visible .scroll-element_size
-      top: -25px
-    &.scroll-x.scroll-scrolly_visible .scroll-element_track
-      left: -25px
-    &.scroll-y.scroll-scrollx_visible .scroll-element_track
-      top: -25px
-
+.photo-item
+	&__slide
+		img
+			max-width: 100%
+			height: auto
+			display: block
+			margin-left: auto
+		
 
 .footer
 	min-height: 9.3vh
@@ -694,6 +972,7 @@ input[type="submit"]
 	padding-top: 1.5rem
 	font-size: 1.12500em
 	letter-spacing: 0.025em
+	z-index: 2
 	&__breadcrumbs
 		position: relative
 		&:after
@@ -739,6 +1018,7 @@ input[type="submit"]
 @media screen and (max-width: 1750px)
 	html, body
 		font-size: 15px
+	
 
 
 @media screen and (max-width: 1550px)
@@ -750,7 +1030,14 @@ input[type="submit"]
 		padding-right: 15%
 	.photo__title
 		font-size: 3.9em
-
+	.blog__slider
+		padding-left: 8%
+	.blog__slide-title
+		font-size: 1.5em
+	.blog-item__wrapper
+		padding-left: 0
+	.contacts__section
+		padding: 0 10%
 
 @media screen and (max-width: 1470px)
 	.photo__nav
@@ -780,11 +1067,46 @@ input[type="submit"]
 		font-size: 1.8em
 	.video__scroll:after
 		width: 4rem
+	.photo-items__content
+		padding-left: 2%
+		padding-right: 6.5%
+	.blog__slider
+		padding-left: 5%
+	.blog__slide-title
+		font-size: 1.4em
+	.blog-item__img
+		width: 45%
+	.blog-item__content
+		height: 34rem
+	.blog-item__content
+		margin-left: 5%
+	.contacts__section
+		padding: 0 7%
+
 
 
 @media screen and (max-width: 991px)
 	html, body
 		font-size: 11px
+	.contacts__section
+		padding: 0
+	.contacts__title
+		font-size: 3.8em
+	.form-group > label.form-content__attention
+		font-size: .9em
+	.blog-item__img
+		width: 40%
+	.blog-item__content
+		height: 32rem
+	.blog-item__content
+		margin-left: 3.5%
+	.blog__slider
+		padding-left: 0%
+	.form-group > label,
+	input, textarea
+		font-size: 1em
+	.brief-inner__section
+		padding: 0
 	.container
 		padding-left: 4.3rem
 		padding-right: 4.3rem
@@ -799,9 +1121,29 @@ input[type="submit"]
 	.video-item-page .inner
 		padding-left: 0
 
+@media screen and (max-width: 900px)
+	.photo-items__slide
+		width: 31% !important
+	.photo-items__content
+		padding-left: 0%
+		padding-right: 7%
+	.photo-items__dots li > button
+		width: 1.6rem
+
 @media screen and (max-width: 767px)
 	html, body
 		font-size: 10px
+	.blog-item__wrapper
+		flex-direction: column
+	.contacts__title
+		font-size: 2.7em
+	.blog-item .blog__slide-title
+		margin-top: 0
+	.blog-item__content
+		margin-top: 2rem
+		margin-left: 0
+	.blog-item__img
+		width: 60%
 	.video__content-item
 		width: 100% !important
 		margin-right: 0
@@ -835,20 +1177,65 @@ input[type="submit"]
 	.main__content-lens
 		font-size: 1.35em
 
+@media screen and (max-width: 700px)
+	.brief-photo
+		.form-content
+			flex-wrap: wrap
+		.form-content__wrapper
+			flex-wrap: wrap
+			flex-direction: row
+			justify-content: space-between
+			align-items: flex-start
+		.form-content__left-bottom
+			position: initial
+		.form-content__left
+			width: 100%
+			margin-bottom: 3.3rem
+		.form-content__right
+			width: 100%
+		.brief-inner__form .form-content__left .form-group:not(.form-group--attention)
+			width: 46.63%
+
+
+@media screen and (max-width: 650px)
+	.photo-items__slide
+		width: 48% !important
+	.photo-items__content
+		padding-right: 10%
+
 @media screen and (max-width: 630px)
 	.photo__nav
 		width: 26%
+
 
 @media screen and (max-width: 600px)
 	.video .inner
 		padding-left: 0%
 		padding-right: 25%
+	.contacts__section
+		flex-direction: column
+	.contacts__content
+		margin-left: 0
+		margin-top: 3rem
 
 @media screen and (max-width: 570px)
 	.header__hamburger
 		display: block
 	.header__nav
 		display: none
+
+@media screen and (max-width: 550px)
+	.brief-inner__form .form-group,
+	.brief-inner__form .form-group:not(.form-group--attention),
+	.brief-photo .brief-inner__form .form-content__left .form-group:not(.form-group--attention)
+		width: 100%
+	.brief-photo input[type="submit"]
+		position: initial
+		display: block
+		margin-left: auto
+	.blog-item__img
+		width: 80%
+
 
 @media screen and (max-width: 530px)
 	.video__scroll
@@ -857,14 +1244,23 @@ input[type="submit"]
 		width: 32%
 	.video .inner
 		padding-right: 0
+	.blog-item__wrapper
+		padding-right: 0
 	.video .inner,
-	.video-item-page .inner
+	.video-item-page .inner,
+	.photo-item-page .inner,
+	.blog .inner,
+	.blog-item .inner
 		flex-direction: column
 		justify-content: center
 		align-items: flex-start
 	.video-item-page .video__scroll,
-	.video .video__scroll
-		margin: 2.5rem 0
+	.video .video__scroll,
+	.photo-item-page .video__scroll,
+	.blog .video__scroll,
+	.blog-item .video__scroll
+		margin: 2.5rem 0 0
+		transform: none
 	.video-item__content
 		padding-right: 0
 
@@ -879,6 +1275,14 @@ input[type="submit"]
 	.photo__title
 		right: 0
 		left: auto
+	.photo-items__slide
+		width: 100% !important
+	.photo-items__content
+		padding-right: 14%
+	.photo-items .slick-slide > div
+		justify-content: center
+	.brief__link-title
+		font-size: 2.5em
 
 @media screen and (max-width: 430px)
 	.photo__nav
@@ -887,3 +1291,5 @@ input[type="submit"]
 		width: 1.5rem
 	.photo__nav-list li
 		padding-right: 1.7rem
+	.contacts__content
+		font-size: 1.2em
