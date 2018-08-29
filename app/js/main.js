@@ -40,7 +40,7 @@ jQuery(document).ready(function($) {
 			$(blogSlider).slick({
 				arrows: false,
 				slidesToShow: 3,
-				touchThreshold: 200,
+				touchThreshold: 5000,
 				responsive: [
 					{
 						breakpoint: 767,
@@ -75,7 +75,7 @@ jQuery(document).ready(function($) {
 			var photoItemSlider = $('#js-photo-item-slider');
 			$(photoItemSlider).slick({
 				arrows: false,
-				touchThreshold: 200,
+				touchThreshold: 5000,
 				adaptiveHeight: true
 			});
 		}
@@ -101,7 +101,7 @@ jQuery(document).ready(function($) {
 				rows: 2,
 				slidesPerRow: 4,
 				arrows: false,
-				touchThreshold: 200,
+				touchThreshold: 5000,
 				dots: true,
 				appendDots: '.photo-items__controls',
 				dotsClass: 'photo-items__dots',
@@ -147,7 +147,7 @@ jQuery(document).ready(function($) {
 			var videoSlider = $('#js-video-slider');
 			$(videoSlider).slick({
 				slidesPerRow: 2,
-				touchThreshold: 200,
+				touchThreshold: 5000,
 				rows: 2,
 				arrows: false,
 				adaptiveHeight: true,
