@@ -568,7 +568,12 @@ form label:not(.flex) {
   background-position: center;
   -moz-background-size: cover;
   background-size: cover;
+  -webkit-transition: 0.35s all ease-in;
+  -o-transition: 0.35s all ease-in;
+  -moz-transition: 0.35s all ease-in;
+  transition: 0.35s all ease-in;
   background-repeat: no-repeat;
+  background-image: none;
   left: 0;
   width: 100%;
 }
@@ -615,6 +620,7 @@ form label:not(.flex) {
   -o-transform: translateX(-100%);
   transform: translateX(-100%);
   z-index: -1;
+  max-width: 22.5rem;
 }
 
 .photo__nav-inner > li {
@@ -2029,6 +2035,9 @@ form label:not(.flex) {
   }
   .photo__nav-list li {
     padding-right: 1.7rem;
+  }
+  .photo__nav-inner > li {
+    padding-left: 1.7rem;
   }
   .contacts__content {
     font-size: 1.2em;

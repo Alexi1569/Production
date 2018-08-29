@@ -359,7 +359,9 @@ form label:not(.flex)
 			top: 0
 			background-position: center
 			background-size: cover
+			transition: 0.35s all ease-in
 			background-repeat: no-repeat
+			background-image: none
 			left: 0
 			width: 100%
 		&-inner
@@ -380,6 +382,7 @@ form label:not(.flex)
 			opacity: 0
 			transform: translateX(-100%)
 			z-index: -1
+			max-width: 22.5rem
 			& > li
 				padding: 0 3.75rem
 				&:after
@@ -1291,5 +1294,7 @@ form label:not(.flex)
 		width: 1.5rem
 	.photo__nav-list li
 		padding-right: 1.7rem
+	.photo__nav-inner > li
+		padding-left: 1.7rem
 	.contacts__content
 		font-size: 1.2em

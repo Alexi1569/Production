@@ -188,7 +188,7 @@ jQuery(document).ready(function($) {
 				}
 			});
 
-			$(nav).find('li').hover(function() {
+			$(nav).find('> li').hover(function() {
 				var offset = $(this)[0].getBoundingClientRect();
 				var total = offset.x + offset.width;
 
@@ -202,22 +202,12 @@ jQuery(document).ready(function($) {
 
 				$(this).addClass('active');
 
-				var target = $(this).attr('data-img') || '';
-
-				$('#js-nav-img').css({
-					'background-image': 'url(' + target + ')',
-				});
-
 				$('#js-photo-title').css({
 					'opacity': '0',
 				});
 
 			}, function() {
 				$(this).removeClass('active');
-
-				$('#js-nav-img').css({
-					'background-image': 'none',
-				});
 
 				$('#js-nav-bg').css({
 					'width': '50%',
@@ -226,7 +216,27 @@ jQuery(document).ready(function($) {
 				$('#js-photo-title').css({
 					'opacity': '1',
 				});
-			})
+			});
+
+			$(nav).find('> li').each(function() {
+				if (($(this).find('ul')).length) {
+					$(this).addClass('no-line');
+				}
+			});
+
+			$(nav).find('li').hover(function() {
+
+				var target = $(this).attr('data-img') || '';
+
+				$('#js-nav-img').css({
+					'background-image': 'url(' + target + ')',
+				});
+
+			}, function() {
+				$('#js-nav-img').css({
+					'background-image': 'none',
+				});
+			});
 		}
 	})();
 });
